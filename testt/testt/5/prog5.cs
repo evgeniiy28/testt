@@ -9,17 +9,13 @@ static void Main(string[] args)
     int sum = 0;
     for (int i = 0; i < 10; i++)
     {
+        sum = 0;
         for (int j = 0; j < 10; j++)
         {
-            nums[i, j] = rnd.Next(100);
+            nums[i, j] = rnd.Next(10, 100);
+            sum += nums[i, j];
             Console.Write(nums[i, j] + " ");
-            if (i == j)
-            {
-                sum += nums[i, j];
-            }
         }
-
-        Console.WriteLine();
+        Console.WriteLine("Сумма: " + sum);
     }
-    Console.WriteLine(sum);
 }

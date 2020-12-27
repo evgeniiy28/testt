@@ -6,20 +6,19 @@ static void Main(string[] args)
 {
     int[,] nums = new int[10, 10];
     Random rnd = new Random();
-    int sum = 0;
+    int max = 0;
     for (int i = 0; i < 10; i++)
     {
+        max = 0;
         for (int j = 0; j < 10; j++)
         {
-            nums[i, j] = rnd.Next(100);
+            nums[i, j] = rnd.Next(10, 100);
             Console.Write(nums[i, j] + " ");
-            if (i == j)
+            if (max < nums[i, j])
             {
-                sum += nums[i, j];
+                max = nums[i, j];
             }
         }
-
-        Console.WriteLine();
+        Console.WriteLine("Максимальный: " + max);
     }
-    Console.WriteLine(sum);
 }
